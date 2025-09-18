@@ -107,7 +107,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  	  int h = 0, m = 0, s = 0;
+  	  int h = 4, m = 45, s = 0;
   while (1)
   {
 	  // testing
@@ -151,7 +151,7 @@ int main(void)
 	  setNumberOnClock(pos_m);
 	  setNumberOnClock(pos_s);
 
-	  HAL_Delay(100);
+	  HAL_Delay(1000);
 
 	  s++; // chay clock
 	  if (s >= 60){

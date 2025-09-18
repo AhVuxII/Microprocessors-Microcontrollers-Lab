@@ -176,10 +176,10 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  	  int h = 0, m = 0, s = 0;
- 80001c6:	2300      	movs	r3, #0
+  	  int h = 4, m = 45, s = 0;
+ 80001c6:	2304      	movs	r3, #4
  80001c8:	617b      	str	r3, [r7, #20]
- 80001ca:	2300      	movs	r3, #0
+ 80001ca:	232d      	movs	r3, #45	; 0x2d
  80001cc:	613b      	str	r3, [r7, #16]
  80001ce:	2300      	movs	r3, #0
  80001d0:	60fb      	str	r3, [r7, #12]
@@ -251,48 +251,47 @@ int main(void)
  8000248:	6838      	ldr	r0, [r7, #0]
  800024a:	f7ff ff9d 	bl	8000188 <setNumberOnClock>
 
-	  HAL_Delay(100);
- 800024e:	2064      	movs	r0, #100	; 0x64
- 8000250:	f000 f97c 	bl	800054c <HAL_Delay>
+	  HAL_Delay(1000);
+ 800024e:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
+ 8000252:	f000 f97b 	bl	800054c <HAL_Delay>
 
 	  s++; // chay clock
- 8000254:	68fb      	ldr	r3, [r7, #12]
- 8000256:	3301      	adds	r3, #1
- 8000258:	60fb      	str	r3, [r7, #12]
+ 8000256:	68fb      	ldr	r3, [r7, #12]
+ 8000258:	3301      	adds	r3, #1
+ 800025a:	60fb      	str	r3, [r7, #12]
 	  if (s >= 60){
- 800025a:	68fb      	ldr	r3, [r7, #12]
- 800025c:	2b3b      	cmp	r3, #59	; 0x3b
- 800025e:	dd04      	ble.n	800026a <main+0xb6>
+ 800025c:	68fb      	ldr	r3, [r7, #12]
+ 800025e:	2b3b      	cmp	r3, #59	; 0x3b
+ 8000260:	dd04      	ble.n	800026c <main+0xb8>
 	  	s = 0;
- 8000260:	2300      	movs	r3, #0
- 8000262:	60fb      	str	r3, [r7, #12]
+ 8000262:	2300      	movs	r3, #0
+ 8000264:	60fb      	str	r3, [r7, #12]
 	  	m++;
- 8000264:	693b      	ldr	r3, [r7, #16]
- 8000266:	3301      	adds	r3, #1
- 8000268:	613b      	str	r3, [r7, #16]
+ 8000266:	693b      	ldr	r3, [r7, #16]
+ 8000268:	3301      	adds	r3, #1
+ 800026a:	613b      	str	r3, [r7, #16]
 	  }
 	  if (m >= 60){
- 800026a:	693b      	ldr	r3, [r7, #16]
- 800026c:	2b3b      	cmp	r3, #59	; 0x3b
- 800026e:	dd04      	ble.n	800027a <main+0xc6>
+ 800026c:	693b      	ldr	r3, [r7, #16]
+ 800026e:	2b3b      	cmp	r3, #59	; 0x3b
+ 8000270:	dd04      	ble.n	800027c <main+0xc8>
 	  	m = 0;
- 8000270:	2300      	movs	r3, #0
- 8000272:	613b      	str	r3, [r7, #16]
+ 8000272:	2300      	movs	r3, #0
+ 8000274:	613b      	str	r3, [r7, #16]
 	  	h++;
- 8000274:	697b      	ldr	r3, [r7, #20]
- 8000276:	3301      	adds	r3, #1
- 8000278:	617b      	str	r3, [r7, #20]
+ 8000276:	697b      	ldr	r3, [r7, #20]
+ 8000278:	3301      	adds	r3, #1
+ 800027a:	617b      	str	r3, [r7, #20]
 	  }
 	  if (h >= 12){
- 800027a:	697b      	ldr	r3, [r7, #20]
- 800027c:	2b0b      	cmp	r3, #11
- 800027e:	dda8      	ble.n	80001d2 <main+0x1e>
+ 800027c:	697b      	ldr	r3, [r7, #20]
+ 800027e:	2b0b      	cmp	r3, #11
+ 8000280:	dda7      	ble.n	80001d2 <main+0x1e>
 	  	h = 0;
- 8000280:	2300      	movs	r3, #0
- 8000282:	617b      	str	r3, [r7, #20]
+ 8000282:	2300      	movs	r3, #0
+ 8000284:	617b      	str	r3, [r7, #20]
   {
- 8000284:	e7a5      	b.n	80001d2 <main+0x1e>
- 8000286:	bf00      	nop
+ 8000286:	e7a4      	b.n	80001d2 <main+0x1e>
  8000288:	2aaaaaab 	.word	0x2aaaaaab
  800028c:	66666667 	.word	0x66666667
 
