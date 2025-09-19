@@ -64,16 +64,16 @@ static void MX_GPIO_Init(void);
 
 typedef struct {uint8_t a,b,c,d,e,f,g;} SEG7; // dung cho LED
 	SEG7 numbers[10] = { //1 = on, 0 = off
-			{1,1,1,1,0,1,1}, //9
-			{1,1,1,1,1,1,1}, //8
-			{1,1,1,0,0,0,0}, //7
-			{1,0,1,1,1,1,1}, //6
-			{1,0,1,1,0,1,1}, //5
-			{0,1,1,0,0,1,1}, //4
-			{1,1,1,1,0,0,1}, //3
-			{1,1,0,1,1,0,1}, //2
-			{0,1,1,0,0,0,0}, //1
-			{1,1,1,1,1,1,0}, //0
+			{1,1,1,1,0,1,1}, //9	0
+			{1,1,1,1,1,1,1}, //8	1
+			{1,1,1,0,0,0,0}, //7	2
+			{1,0,1,1,1,1,1}, //6	3
+			{1,0,1,1,0,1,1}, //5	4
+			{0,1,1,0,0,1,1}, //4	5
+			{1,1,1,1,0,0,1}, //3	6
+			{1,1,0,1,1,0,1}, //2	7
+			{0,1,1,0,0,0,0}, //1	8
+			{1,1,1,1,1,1,0}, //0	9
 		};
 
 void display7SEG(int num){
@@ -118,15 +118,53 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int counter = 0;
     while (1)
     {
-  	  if(counter >= 10) counter = 0;
-  	   display7SEG(counter++);
-  	   HAL_Delay(1000);
-      /* USER CODE END WHILE */
+    	// 5s red
+    	HAL_GPIO_TogglePin(LED_RED1_GPIO_Port, LED_RED1_Pin);
+    	HAL_GPIO_TogglePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin);
+    	for (int i = 7; i < 10; i++){
+    		display7SEG(i);
+    		HAL_Delay(1000);
+    	}
 
-      /* USER CODE BEGIN 3 */
+    	HAL_GPIO_TogglePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin);
+    	HAL_GPIO_TogglePin(LED_YELLOW2_GPIO_Port, LED_YELLOW2_Pin);
+    	for (int i = 8; i < 10; i++){
+    		display7SEG(i);
+    		HAL_Delay(1000);
+    	}
+
+    	 HAL_GPIO_TogglePin(LED_RED1_GPIO_Port, LED_RED1_Pin);
+    	 HAL_GPIO_TogglePin(LED_YELLOW2_GPIO_Port, LED_YELLOW2_Pin);
+    	 HAL_GPIO_TogglePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin);
+    	 HAL_GPIO_TogglePin(LED_RED2_GPIO_Port, LED_RED2_Pin);
+    	 for (int i = 6; i < 10; i++){
+    		 display7SEG(i);
+    		 HAL_Delay(1000);
+    	 }
+
+    	 HAL_GPIO_TogglePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin);
+    	 HAL_GPIO_TogglePin(LED_YELLOW1_GPIO_Port, LED_YELLOW1_Pin);
+    	 for (int i = 6; i < 10; i++){
+    		 display7SEG(i);
+    		 HAL_Delay(1000);
+    	 }
+
+    	 HAL_GPIO_TogglePin(LED_RED2_GPIO_Port, LED_RED2_Pin);
+    	 HAL_GPIO_TogglePin(LED_YELLOW1_GPIO_Port, LED_YELLOW1_Pin);
+    	 HAL_GPIO_TogglePin(LED_RED1_GPIO_Port, LED_RED1_Pin);
+    	 HAL_GPIO_TogglePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin);
+    	 for (int i = 5; i < 10; i++){
+    	     display7SEG(i);
+    	     HAL_Delay(1000);
+    	 }
+
+    	 HAL_GPIO_TogglePin(LED_RED1_GPIO_Port, LED_RED1_Pin);
+    	 HAL_GPIO_TogglePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin);
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
     }
   /* USER CODE END 3 */
 }
@@ -181,19 +219,16 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, LED_RED1_Pin|LED_YELLOW1_Pin|LED_GREEN1_Pin|LED_RED2_Pin
-                          |LED_YELLOW2_Pin|LED_GREEN2_Pin|LED_RED3_Pin|LED_YELLOW3_Pin
-                          |LED_GREEN3_Pin|LED_RED4_Pin|LED_YELLOW4_Pin|LED_GREEN4_Pin, GPIO_PIN_RESET);
+                          |LED_YELLOW2_Pin|LED_GREEN2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, a_Pin|b_Pin|c_Pin|d_Pin
                           |e_Pin|f_Pin|g_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : LED_RED1_Pin LED_YELLOW1_Pin LED_GREEN1_Pin LED_RED2_Pin
-                           LED_YELLOW2_Pin LED_GREEN2_Pin LED_RED3_Pin LED_YELLOW3_Pin
-                           LED_GREEN3_Pin LED_RED4_Pin LED_YELLOW4_Pin LED_GREEN4_Pin */
+                           LED_YELLOW2_Pin LED_GREEN2_Pin */
   GPIO_InitStruct.Pin = LED_RED1_Pin|LED_YELLOW1_Pin|LED_GREEN1_Pin|LED_RED2_Pin
-                          |LED_YELLOW2_Pin|LED_GREEN2_Pin|LED_RED3_Pin|LED_YELLOW3_Pin
-                          |LED_GREEN3_Pin|LED_RED4_Pin|LED_YELLOW4_Pin|LED_GREEN4_Pin;
+                          |LED_YELLOW2_Pin|LED_GREEN2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

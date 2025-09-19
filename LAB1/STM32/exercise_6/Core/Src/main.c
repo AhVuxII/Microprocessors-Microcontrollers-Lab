@@ -61,7 +61,8 @@ static void MX_GPIO_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
-uint16_t pins[12] = {LED12_Pin, LED1_Pin, LED2_Pin, LED3_Pin, LED4_Pin, LED5_Pin, LED6_Pin, LED7_Pin, LED8_Pin, LED9_Pin, LED10_Pin, LED11_Pin};
+uint16_t pins[12] = {LED12_Pin, LED1_Pin, LED2_Pin, LED3_Pin, LED4_Pin, LED5_Pin,
+						LED6_Pin, LED7_Pin, LED8_Pin, LED9_Pin, LED10_Pin, LED11_Pin};
 void clearAllClock(){
 	for (int i = 0; i < 12; i++){
 		HAL_GPIO_WritePin(GPIOA, pins[i], GPIO_PIN_SET);
@@ -107,14 +108,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  	  int h = 4, m = 45, s = 0;
+  	  int h = 5, m = 59, s = 50;
   while (1)
   {
 	  // testing
-	  /*
-	  clearAllClock();
-	  HAL_Delay(500);
 
+	  /*clearAllClock();
+	  HAL_Delay(500);*/
+	  /*
 	  HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
 	  HAL_Delay(500);
 	  HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
@@ -138,7 +139,8 @@ int main(void)
 	  HAL_GPIO_TogglePin(LED11_GPIO_Port, LED11_Pin);
 	  HAL_Delay(500);
 	  HAL_GPIO_TogglePin(LED12_GPIO_Port, LED12_Pin);
-	  HAL_Delay(500); */
+	  HAL_Delay(500);
+	   */
 
 	  // CLOCK
 	  clearAllClock();
