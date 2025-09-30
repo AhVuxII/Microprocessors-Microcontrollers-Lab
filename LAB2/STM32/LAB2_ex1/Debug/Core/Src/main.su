@@ -1,7 +1,15 @@
 main.c:81:6:display7SEG	24	static
 main.c:93:5:main	8	static
+<<<<<<< HEAD
 main.c:114:6:SystemClock_Config	72	static
 main.c:150:13:MX_TIM2_Init	32	static
 main.c:195:13:MX_GPIO_Init	32	static
 main.c:230:7:HAL_TIM_PeriodElapsedCallback	16	static
 main.c:250:6:Error_Handler	4	static,ignoring_inline_asm
+=======
+main.c:137:6:SystemClock_Config	72	static
+main.c:173:13:MX_TIM2_Init	32	static
+main.c:218:13:MX_GPIO_Init	32	static
+main.c:239:7:HAL_TIM_PeriodElapsedCallback	16	static
+main.c:259:6:Error_Handler	4	static,ignoring_inline_asm
+>>>>>>> e98d3f2975c12c5bcdd7daffa4b3a7127e4e4205

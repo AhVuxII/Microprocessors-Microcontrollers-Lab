@@ -9,6 +9,7 @@ CDefines=USE_HAL_DRIVER;STM32F103x6;USE_HAL_DRIVER;USE_HAL_DRIVER;
 [PreviousGenFiles]
 AdvancedFolderStructure=true
 HeaderFileListSize=3
+<<<<<<< HEAD
 HeaderFiles#0=F:/STM32/Workspace/LAB2_ex1/Core/Inc/stm32f1xx_it.h
 HeaderFiles#1=F:/STM32/Workspace/LAB2_ex1/Core/Inc/stm32f1xx_hal_conf.h
 HeaderFiles#2=F:/STM32/Workspace/LAB2_ex1/Core/Inc/main.h
@@ -21,5 +22,19 @@ SourceFiles#1=F:/STM32/Workspace/LAB2_ex1/Core/Src/stm32f1xx_hal_msp.c
 SourceFiles#2=F:/STM32/Workspace/LAB2_ex1/Core/Src/main.c
 SourceFolderListSize=1
 SourcePath#0=F:/STM32/Workspace/LAB2_ex1/Core/Src
+=======
+HeaderFiles#0=D:/STM32/Workspace/LAB2_ex1/Core/Inc/stm32f1xx_it.h
+HeaderFiles#1=D:/STM32/Workspace/LAB2_ex1/Core/Inc/stm32f1xx_hal_conf.h
+HeaderFiles#2=D:/STM32/Workspace/LAB2_ex1/Core/Inc/main.h
+HeaderFolderListSize=1
+HeaderPath#0=D:/STM32/Workspace/LAB2_ex1/Core/Inc
+HeaderFiles=;
+SourceFileListSize=3
+SourceFiles#0=D:/STM32/Workspace/LAB2_ex1/Core/Src/stm32f1xx_it.c
+SourceFiles#1=D:/STM32/Workspace/LAB2_ex1/Core/Src/stm32f1xx_hal_msp.c
+SourceFiles#2=D:/STM32/Workspace/LAB2_ex1/Core/Src/main.c
+SourceFolderListSize=1
+SourcePath#0=D:/STM32/Workspace/LAB2_ex1/Core/Src
+>>>>>>> e98d3f2975c12c5bcdd7daffa4b3a7127e4e4205
 SourceFiles=;
 
