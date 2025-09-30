@@ -91,7 +91,6 @@ void display7SEG(int num){
 }
 
 int main(void)
-<<<<<<< HEAD
  {
  HAL_Init();
  SystemClock_Config();
@@ -107,46 +106,6 @@ int main(void)
 
  	 }
  }
-=======
-{
-  /* USER CODE BEGIN 1 */
-
-  /* USER CODE END 1 */
-
-  /* MCU Configuration--------------------------------------------------------*/
-
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
-
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
-
-  /* Configure the system clock */
-  SystemClock_Config();
-
-  /* USER CODE BEGIN SysInit */
-
-  /* USER CODE END SysInit */
-
-  /* Initialize all configured peripherals */
-  MX_TIM2_Init();
-  MX_GPIO_Init();
-  /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start_IT(&htim2);
-  /* USER CODE END 2 */
-
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
-  }
-  /* USER CODE END 3 */
-}
->>>>>>> e98d3f2975c12c5bcdd7daffa4b3a7127e4e4205
 
 /**
   * @brief System Clock Configuration
@@ -239,7 +198,6 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();
-<<<<<<< HEAD
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
@@ -264,18 +222,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-=======
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin : LED_Pin */
-  GPIO_InitStruct.Pin = LED_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LED_GPIO_Port, &GPIO_InitStruct);
->>>>>>> e98d3f2975c12c5bcdd7daffa4b3a7127e4e4205
 
 }
 
@@ -285,7 +231,6 @@ int counter = 100;
  {
 	 if (counter == 100){
 	  display7SEG(1);
-<<<<<<< HEAD
 	  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_RESET);
 	  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_SET);
 	  }
@@ -293,15 +238,6 @@ int counter = 100;
 	  display7SEG(2);
 	  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, GPIO_PIN_SET);
 	  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, GPIO_PIN_RESET);
-=======
-	  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
-	  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
-	  }
-	 else if (counter == 50){
-	  display7SEG(2);
-	  HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
-	  HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, RESET);
->>>>>>> e98d3f2975c12c5bcdd7daffa4b3a7127e4e4205
 	  }
 	  counter = (counter > 0) ? counter-1 : 100;
  }
