@@ -1,0 +1,3 @@
+input_processing.c:10:6:handleButtonPress	8	static
+input_processing.c:28:6:runFsm1	8	static
+input_processing.c:118:6:runFsm2	8	static

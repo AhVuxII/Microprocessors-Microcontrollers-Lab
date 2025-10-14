@@ -1,0 +1,2 @@
+fsm_modify.c:9:6:toggleLEDs	16	static
+fsm_modify.c:20:6:fsm_modify	8	static

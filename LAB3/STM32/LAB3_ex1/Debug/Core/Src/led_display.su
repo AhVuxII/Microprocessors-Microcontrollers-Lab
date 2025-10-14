@@ -1,0 +1,13 @@
+led_display.c:9:6:setRed1	8	static
+led_display.c:15:6:setYellow1	8	static
+led_display.c:21:6:setGreen1	8	static
+led_display.c:27:6:setRed2	8	static
+led_display.c:33:6:setYellow2	8	static
+led_display.c:39:6:setGreen2	8	static
+led_display.c:45:6:toggleRed1	8	static
+led_display.c:48:6:toggleYellow1	8	static
+led_display.c:51:6:toggleGreen1	8	static
+led_display.c:54:6:toggleRed2	8	static
+led_display.c:57:6:toggleYellow2	8	static
+led_display.c:60:6:toggleGreen2	8	static
+led_display.c:64:6:clearLed	8	static
