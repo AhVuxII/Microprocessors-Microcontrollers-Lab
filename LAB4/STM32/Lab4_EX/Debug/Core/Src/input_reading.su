@@ -1,0 +1,3 @@
+input_reading.c:24:6:setButton	16	static
+input_reading.c:36:6:readButton	24	static
+input_reading.c:61:15:Press_button	16	static

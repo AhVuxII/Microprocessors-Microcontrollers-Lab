@@ -1,0 +1,8 @@
+sched.c:22:6:SCH_INIT	4	static
+sched.c:29:6:SCH_Update	4	static
+sched.c:36:5:deleteTask	24	static
+sched.c:62:13:SCH_Delete_Task	24	static
+sched.c:72:5:addTask	24	static
+sched.c:101:15:SCH_Add_Task	32	static
+sched.c:113:6:SCH_Dispatcher	16	static
+sched.c:144:6:SCH_Report_Status	4	static
