@@ -1,0 +1,7 @@
+uart.c:30:13:setTimer	16	static
+uart.c:36:13:clearTimer	4	static
+uart.c:40:16:isTimerExpired	8	static
+uart.c:53:13:HandleReset	8	static
+uart.c:74:13:HandleADC	8	static
+uart.c:81:13:HandleOK	8	static
+uart.c:101:6:uart_fsm	120	static

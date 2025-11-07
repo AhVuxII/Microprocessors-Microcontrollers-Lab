@@ -1,0 +1,6 @@
+parser.c:24:13:reset_command	4	static
+parser.c:29:13:add_char_to_command	16	static
+parser.c:36:13:finish_command	4	static
+parser.c:42:13:parse_fsm	16	static
+parser.c:70:6:parser_init	16	static
+parser.c:76:6:HAL_UART_RxCpltCallback	16	static
